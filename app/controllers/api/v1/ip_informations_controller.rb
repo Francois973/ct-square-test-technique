@@ -3,8 +3,8 @@ module Api
     class IpInformationsController < ApplicationController
       def index
         ip = params[:ip]
-        domain = { "company.domain": 'ct-square.com' }
-        render json: domain
+        @result = FetcherService.new(ip).call
+        render json: @result
       end
     end
   end

@@ -3,8 +3,15 @@ module Api
     class IpInformationsController < ApplicationController
       def index
         ip = params[:ip]
-        @result = FetcherService.new(ip).call
-        render json: @result
+        if !params[:force] && $redis.get(ip)
+          logger.info("Return response from cache #{ip}")
+          render json: $redis.get(ip)
+        else
+          logger.info("Return response from ipregistry #{ip}")
+          result = FetcherService.new(ip).call
+          $redis.set(ip, result)
+          render json: result
+        end
       end
     end
   end

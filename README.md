@@ -12,7 +12,7 @@ This microservice allows you to retrieve information based on an IP address with
 
 The result has been applanated by the micro service in order to facilitate its reading.
 
-```json
+```sh
 {
                                      "ip" => "37.174.71.166",
                                    "type" => "IPv4",
@@ -42,88 +42,6 @@ The result has been applanated by the micro service in order to facilitate its r
                 "location.continent.code" => "EU",
                 "location.continent.name" => "Europe",
                   "location.country.area" => 547030,
-               "location.country.borders" => [
-        [0] "AD",
-        [1] "BE",
-        [2] "CH",
-        [3] "DE",
-        [4] "ES",
-        [5] "IT",
-        [6] "LU",
-        [7] "MC"
-    ],
-          "location.country.calling_code" => "33",
-               "location.country.capital" => "Paris",
-                  "location.country.code" => "FR",
-                  "location.country.name" => "France",
-            "location.country.population" => 67749632,
-    "location.country.population_density" => 123.85,
-            "location.country.flag.emoji" => "🇫🇷",
-    "location.country.flag.emoji_unicode" => "U+1F1EB U+1F1F7",
-         "location.country.flag.emojitwo" => "https://cdn.ipregistry.co/flags/emojitwo/fr.svg",
-             "location.country.flag.noto" => "https://cdn.ipregistry.co/flags/noto/fr.png",
-          "location.country.flag.twemoji" => "https://cdn.ipregistry.co/flags/twemoji/fr.svg",
-        "location.country.flag.wikimedia" => "https://cdn.ipregistry.co/flags/wikimedia/fr.svg",
-             "location.country.languages" => [
-        [0] {
-              "code" => "fr",
-              "name" => "French",
-            "native" => "français"
-        },
-        [1] {
-              "code" => "br",
-              "name" => "Breton",
-            "native" => "brezhoneg"
-        },
-        [2] {
-              "code" => "co",
-              "name" => "Corsican",
-            "native" => "Corsican"
-        },
-        [3] {
-              "code" => "ca",
-              "name" => "Catalan",
-            "native" => "català"
-        },
-        [4] {
-              "code" => "eu",
-              "name" => "Basque",
-            "native" => "euskara"
-        },
-        [5] {
-              "code" => "oc",
-              "name" => "Occitan",
-            "native" => "Occitan"
-        }
-    ],
-                   "location.country.tld" => ".fr",
-                   "location.region.code" => nil,
-                   "location.region.name" => nil,
-                          "location.city" => nil,
-                        "location.postal" => nil,
-                      "location.latitude" => 48.85816,
-                     "location.longitude" => 2.33873,
-                 "location.language.code" => "fr",
-                 "location.language.name" => "French",
-               "location.language.native" => "français",
-                         "location.in_eu" => true,
-                     "security.is_abuser" => false,
-                   "security.is_attacker" => false,
-                      "security.is_bogon" => false,
-             "security.is_cloud_provider" => false,
-                      "security.is_proxy" => false,
-                      "security.is_relay" => false,
-                        "security.is_tor" => false,
-                   "security.is_tor_exit" => false,
-                        "security.is_vpn" => false,
-                  "security.is_anonymous" => false,
-                     "security.is_threat" => false,
-                           "time_zone.id" => "Europe/Paris",
-                 "time_zone.abbreviation" => "CET",
-                 "time_zone.current_time" => "2023-04-04T16:00:26+02:00",
-                         "time_zone.name" => "Central European Standard Time",
-                       "time_zone.offset" => 7200,
-           "time_zone.in_daylight_saving" => true
 }
 ````
 
@@ -151,3 +69,4 @@ rails server
 ```sh
 curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET  http:/localhost:3000/api/v1/ip_informations\?ip\=37.174.71.166
 ```
+If you want to skip caching you can add param "force"

@@ -14,6 +14,7 @@ gem 'awesome_print'
 gem 'dotenv-rails'
 gem 'pry-byebug'
 gem 'puma', '~> 5.0'
+gem 'rack-cors', '~> 1.1', '>= 1.1.1'
 gem 'redis'
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"

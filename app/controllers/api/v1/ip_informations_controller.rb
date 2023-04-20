@@ -5,10 +5,11 @@ module Api
         ip = params[:ip]
         if !params[:force] || params[:cache] && $redis.get(ip)
           logger.info("Return response from cache #{ip}")
+          ap $redis.get(ip)
           render json: $redis.get(ip)
         else
           logger.info("Return response from ipRegistry #{ip}")
-          result = FetcherService.new(ip).call
+          ap result = FetcherService.new(ip).call
           $redis.set(ip, result)
           render json: result
         end
